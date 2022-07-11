@@ -1,3 +1,7 @@
+.recommendation-modal__container {
+  display: none;
+}
+
 .product .accordion {
   background-color: #f9f8fa;
   color: #444;
