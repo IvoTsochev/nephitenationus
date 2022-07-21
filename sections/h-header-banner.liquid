@@ -1,0 +1,323 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+
+<div class="h-header-banner">
+
+    {% if section.settings.section-text-or-image == 'Text' %}
+      <h1>{{ section.settings.section-main-title }}</h1>
+    {% else %}
+      <img src="{{ section.settings.section-main-title-image.src | img_url: '1900x' }}" alt="{{ section.settings.section-main-title }}">
+    {% endif %}
+
+  <div class="banner-row-one">
+    <a href="/collections/{{ section.settings.row-one-img-one-collection_url }}" class="row-one-img-one image_container">
+      <div class="image_container">
+        <h2>{{ section.settings.row-one-image-one-title }} <span>> SHOP NOW</span></h2>
+      </div>
+    </a>
+    <a href="/collections/{{ section.settings.row-one-img-two-collection_url }}" class="row-one-img-two image_container">
+      <div class="image_container">
+        <h2>ROW ONE IMAGE TWO <span>> SHOP NOW</span></h2>
+      </div>
+    </a>
+  </div>
+
+  <div class="banner-row-two">
+    <a href="/collections/{{ section.settings.row-two-main-img-collection_url }}" class="row-two-main-img image_container">
+      <div class="image_container row-two-main-img">
+        <h2>ROW TWO MAIN IMAGE <span>> SHOP NOW</span></h2>
+      </div>
+    </a>
+  </div>
+
+</div>
+
+<script>
+
+window.addEventListener('load', () => {
+
+
+  let containerHeight = document.querySelector('.h-header-banner').offsetHeight;
+  let containerWidth = document.querySelector('.h-header-banner').offsetWidth;
+  let endY;
+
+
+  if(containerWidth < 500) {
+    endY = containerHeight - 700;
+  } else {
+    endY = containerHeight / 2;
+  }
+
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.h-header-banner',
+      start: 'top top',
+      end: 'bottom bottom',
+      markers: false,
+      scrub: 1,
+    }
+  });
+
+  if(document.querySelector('.h-header-banner h1')) {
+    tl.to('.h-header-banner h1', {
+      opacity: 1,
+      color: "#fff",
+      yPercent: 400,
+    })
+  } else {
+      tl.to('.h-header-banner img', {
+      yPercent: 550,
+    })
+  }
+
+  
+
+
+
+})  
+
+</script>
+
+
+<style>
+
+.h-header-banner {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+  float: none;
+}
+
+.h-header-banner h1 {
+  user-select: none;
+  width: 100%;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: {{section.settings.section-main-title-size}}px;
+}
+@media (max-width: 500px) {
+  .h-header-banner h1 {
+    display: none;
+  }
+}
+
+.h-header-banner img {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width: 500px) {
+  .h-header-banner img {
+    display: none;
+  }
+}
+
+.h-header-banner span {
+  opacity: 0;
+  font-size: 15px;
+  font-family: "Helvetica Now Text", Helvetica, Arial, sans-serif;
+  color: black;
+}
+
+@media (max-width: 500px) {
+  .h-header-banner span {
+    opacity: 1;
+  }
+}
+
+.h-header-banner a:link , .h-header-banner a:visited, .h-header-banner a:hover, .h-header-banner a:active {
+  text-decoration: none;
+  color: black;
+}
+
+
+.h-header-banner .image_container:hover span {
+  opacity: 1;
+}
+
+.h-header-banner h2 {
+  display: block;
+  font-size: 15px;
+  font-family: "Helvetica Now Text", Helvetica, Arial, sans-serif;
+  position: sticky;
+  top: 30px;
+}
+
+.h-header-banner .image_container {
+  background-size: cover;
+  cursor: pointer;
+  padding: 10px;
+  background-position: center center;
+}
+@media (min-width: 768px) {
+  .h-header-banner .image_container {
+    min-height: 100vh !important;
+  }
+}
+@media (max-width: 500px) {
+  .h-header-banner .image_container {
+    min-height: 100vh !important;
+  }
+}
+
+/* First row images */
+.banner-row-one {
+  display: flex;
+}
+@media (max-width: 500px) {
+  .banner-row-one {
+    flex-direction: column;
+  }
+}
+
+.banner-row-one .row-one-img-one {
+  flex: 50%;
+  background-image: url("{{ section.settings.row-one-img-one | image_url }}");
+  background-position: center center;
+}
+
+.banner-row-one .row-one-img-two {
+  flex: 50%;
+  background-image: url("{{ section.settings.row-one-img-two | image_url }}");
+  background-position: center center;
+}
+
+/* Second row images */
+
+.banner-row-two {
+  background-image: url("{{ section.settings.row-two-main-img | image_url }}");
+  background-size: cover;
+}
+
+.banner-row-two .row-two-main-img {
+  flex: 100%;
+}
+
+
+
+
+</style>
+
+{% schema %}
+{
+  "name": "Headless Header Banner",
+  "tag": "section",
+  "class": "h-header-banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "(1) First row images."
+    },
+    {
+      "id": "row-one-img-one",
+      "label": "(1.1) Row One Image One.",
+      "type": "image_picker"
+    },
+    {
+      "id": "row-one-img-one-collection_url",
+      "label": "(1.2) Row One Image One Collection URL",
+      "type": "collection",
+      "info": "Assign a collection to the (1.1) image."
+    },
+    {
+      "type": "text",
+      "id": "row-one-image-one-title",
+      "label": "Row One Image One Title",
+      "default": "ROW ONE IMAGE ONE",
+      "info": "Text to display in upper left corner of (1.1) image."
+    },
+    {
+      "id": "row-one-img-two",
+      "label": "(1.3) Row One Image Two",
+      "type": "image_picker"
+    },
+    {
+      "id": "row-one-img-two-collection_url",
+      "label": "Row One Image Two Collection URL",
+      "type": "collection",
+      "info": "Assign a collection to the (1.3) image."
+    },
+    {
+      "type": "header",
+      "content": "(2) Second row main image"
+    },
+    {
+      "id": "row-two-main-img",
+      "label": "(2.1) Row Two Main Image",
+      "type": "image_picker"
+    },
+    {
+      "id": "row-two-main-img-collection_url",
+      "label": "Row Two Main Image Collection URL",
+      "type": "collection",
+      "info": "Assign a collection to the (2.1) image."
+    },
+    {
+     "type": "header",
+      "content": "(3) Section Main Title"
+    },
+    {
+     "type": "radio",
+      "id": "section-text-or-image",
+      "label": "(3.1) Choose whether to use text or image for the section main title",
+      "default": "Text",
+      "options": [
+        {
+          "value": "Text",
+          "label": "(3.2) Use Text Title"
+        },
+        {
+          "value": "Image",
+          "label": "(3.3) Use Image"
+        }
+      ]
+    },
+    {
+      "id": "section-main-title",
+      "label": "Section Main Title",
+      "type": "text",
+      "info": "You must check (3.2) to use this setting.",
+      "default": "Headless Header Banner"
+    },
+    {
+     "type": "range",
+      "id": "section-main-title-size",
+      "label": "Section Main Title Size",
+      "info": "The size of the main title (Desktop). You must check (3.2) to use this setting.",
+      "default": 200,
+      "min": 100,
+      "max": 200,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "section-main-title-size-mobile",
+      "label": "Section Main Title Size",
+      "info": "The size of the main title (Mobile). You must check (3.2) to use this setting.",
+      "default": 50,
+      "min": 25,
+      "max": 50,
+      "step": 1
+    },
+    {
+     "type": "image_picker",
+      "id": "section-main-title-image",
+      "label": "Section Main Title Image",
+      "info": "You must check (3.3) to use this setting."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Headless Header Banner"
+    }
+  ]
+}
+{% endschema %}
