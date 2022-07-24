@@ -1,0 +1,179 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+
+
+      <!-- Shop Categories
+					============================================= -->
+      <div class="fancy-title title-border title-center mb-4">
+        <h4>Shop popular categories</h4>
+      </div>
+
+      <div class="row shop-categories clearfix">
+        <div class="col-lg-7">
+          <a href="#"
+            style="background: url('{{ section.settings.image1 | img_url: '1000x' }}') no-repeat right center; background-size: cover;">
+            <div class="vertical-middle dark center">
+              <div class="heading-block m-0 border-0">
+                <h3 class="nott fw-semibold ls0">For Him</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-5">
+          <a href="#"
+            style="background: url('{{ section.settings.image2 | img_url: '1000x' }}') no-repeat center right; background-size: cover;">
+            <div class="vertical-middle dark center">
+              <div class="heading-block m-0 border-0">
+                <h3 class="nott fw-semibold ls0">For Her</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-4">
+          <a href="#"
+            style="background: url('{{ section.settings.image3 | img_url: '1000x' }}') no-repeat center center; background-size: cover;">
+            <div class="vertical-middle dark center">
+              <div class="heading-block m-0 border-0">
+                <h3 class="nott fw-semibold ls0">Popular Products</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4">
+          <a href="#"
+            style="background: url('{{ section.settings.image4 | img_url: '1000x' }}') no-repeat center center; background-size: cover;">
+            <div class="vertical-middle dark center">
+              <div class="heading-block m-0 border-0">
+                <h3 class="nott fw-semibold ls0">Footwears</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4">
+          <a href="#"
+            style="background: url('{{ section.settings.image5 | img_url: '1000x' }}') no-repeat center center; background-size: cover;">
+            <div class="vertical-middle dark center">
+              <div class="heading-block m-0 border-0">
+                <h3 class="nott fw-semibold ls0">Sportswear</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+  /* @import url('https://cdn.headless.team/css/bootstrap.css');
+  @import url('https://cdn.headless.team/style.css');
+  @import url('https://cdn.headless.team/css/dark.css');
+  @import url('https://cdn.headless.team/css/swiper.css');
+  @import url('https://cdn.headless.team/demos/shop/shop.css');
+  @import url('https://cdn.headless.team/demos/shop/css/fonts.css');
+  @import url('https://cdn.headless.team/css/font-icons.css');
+  @import url('https://cdn.headless.team/css/animate.css');
+  @import url('https://cdn.headless.team/css/magnific-popup.css');
+  @import url('https://cdn.headless.team/css/custom.css');
+  @import url('https://cdn.headless.team/css/colors.php?color=000000'); */
+
+  .h-popular-categories h3 {
+    font-size: 28px !important;
+  }
+
+
+</style>
+
+
+{% schema %}
+{
+"name": "Headless Popular Cat",
+"tag": "section",
+"class": "h-popular-categories",
+"settings": [
+{
+"type": "header",
+"content": "(1) First Category"
+},
+{
+"type": "image_picker",
+"id": "image1",
+"label": "Image for the First category tile"
+},
+{
+"type": "text",
+"id": "title1",
+"label": "Title for the First category tile",
+"default": "For Him"
+},
+{
+"type": "header",
+"content": "(2) Second Category"
+},
+{
+"type": "image_picker",
+"id": "image2",
+"label": "Image for the Second category tile"
+},
+{
+"type": "text",
+"id": "title2",
+"label": "Title for the Second category tile",
+"default": "For Her"
+},
+{
+"type": "header",
+"content": "(3) Third Category"
+},
+{
+"type": "image_picker",
+"id": "image3",
+"label": "Image for the Third category tile"
+},
+{
+"type": "text",
+"id": "title3",
+"label": "Title for the Third category tile",
+"default": "Popular Products"
+},
+{
+"type": "header",
+"content": "(4) Fourth Category"
+},
+{
+"type": "image_picker",
+"id": "image4",
+"label": "Image for the Fourth category tile"
+},
+{
+"type": "text",
+"id": "title4",
+"label": "Title for the Fourth category tile",
+"default": "Footwears"
+},
+{
+"type": "header",
+"content": "(5) Fifth Category"
+},
+{
+"type": "image_picker",
+"id": "image5",
+"label": "Image for the Fifth category tile"
+},
+{
+"type": "text",
+"id": "title5",
+"label": "Title for the Fifth category tile",
+"default": "Sportswear"
+}
+],
+"presets": [
+{
+"name": "Headless Popular Cat"
+}
+]
+}
+{% endschema %}

@@ -211,10 +211,19 @@
     </script>
   {% capture boostersnippet %}{% include "booster-apps-common" %}{% endcapture %}{% unless boostersnippet contains "Liquid error" %}{{ boostersnippet }}{% endunless %}
 
-    <!-- Headless team -->
+    <!-- HEADLESS TEAM -->
     {{ 'headless.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'headless.js' | asset_url }}" defer="defer"></script>
-    <!-- /Headless team -->
+
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <!-- END GSAP -->
+
+
+
+    <!-- /HEADLESS TEAM -->
 
 </head>
 

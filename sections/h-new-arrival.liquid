@@ -1,0 +1,122 @@
+<div class="h-new-arrival-section">
+
+  <div class="h-txt-part">
+    <p class="h-caption">{{ section.settings.section-caption }}</p>
+    <h2>{{ section.settings.section-title }}</h2>
+    <p class="h-description">{{ section.settings.section-description }}</p>
+    <a href="{{ section.settings.collection }}">SHOP NOW</a>
+    <div class="h-small-products">
+      <a href="">
+        <img src="{{ section.settings.product-1 | img_url: '150x' }}" alt="{{ section.settings.product-1.title }}">
+        <!-- <h4>{{ section.settings.product-1.title }}</h4> -->
+        <!-- <p>{{ section.settings.product-1.price | money }}</p> -->
+      </a>
+      <a href="">
+        <img src="{{ section.settings.product-2 | img_url: '150x' }}" alt="{{ section.settings.product-2.title }}">
+        <!-- <h4>{{ section.settings.product-2.title }}</h4> -->
+        <!-- <p>{{ section.settings.product-2.price | money }}</p> -->
+      </a>
+    </div>
+  </div>
+
+  <a href="" class="h-img-part">
+    <!-- <img src="{{ section.settings.product-3 | img_url: '500x' }}" alt="{{ section.settings.product-3.title }}"> -->
+  </a> 
+
+</div>
+
+
+<style>
+
+  .h-new-arrival-section {
+    display: flex;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .h-txt-part {
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    flex: 50%;
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .h-small-products {
+    display: flex;
+  }
+
+  .h-small-products a {
+    /* max-width: 100px; */
+  }
+
+  .h-img-part {
+    margin: 1rem;
+    background-color: red;
+    flex: 50%;
+    padding: 1rem;
+    background-image: url('{{ section.settings.product-3 | img_url: "500x" }}');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+    background-position: center;
+  }
+
+</style>
+
+
+{% schema %}
+{
+  "name": "Headless New Arrival",
+  "tag": "section",
+  "class": "h-new-arrival",
+  "settings": [
+
+  {
+   "type": "text",
+    "id": "section-caption",
+    "label": "Section Caption",
+    "default": "New Arrival"
+  },
+    {
+      "type": "text",
+      "label": "Title",
+      "id": "section-title",
+      "default": "Fresh Arrivals / Autumn 18"
+    },
+    {
+     "type": "textarea",
+      "label": "Description",
+      "id": "section-description",
+      "default": "Dynamically drive interdependent metrics for worldwide portals. Proactively grow client technology schemas."
+    },
+    {
+     "type": "collection",
+      "label": "Choose a collection",
+      "id": "collection"
+    },
+    {
+     "type": "product",
+      "label": "Choose a product",
+      "id": "product-1"
+    },
+    {
+      "type": "product",
+      "label": "Choose a product",
+      "id": "product-2"
+    },
+    {
+      "type": "product",
+      "label": "Choose the main product",
+      "id": "product-3"
+    }
+
+  ],
+  "presets": [
+    {
+      "name": "Headless New Arrival"
+    }
+  ]
+}
+{% endschema %}
