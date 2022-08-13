@@ -95,7 +95,12 @@
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
+    "favicon": "shopify:\/\/shop_images\/Logo_black_white_icon_9da65cf8-9521-428f-88e0-85c94c4a7a89.png",
     "currency_code_enabled": false,
+    "checkout_header_image": "shopify:\/\/shop_images\/100x400_checkout.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/understanding-glaucoma.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "large",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -124,7 +129,7 @@
           "logo_position": "middle-left",
           "menu": "main-menu",
           "show_line_separator": true,
-          "enable_sticky_header": false,
+          "enable_sticky_header": true,
           "margin_bottom": 0
         }
       },
