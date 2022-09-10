@@ -1,0 +1,135 @@
+<div class="hd_img_w_text-container">
+  <div class="hd_img_w_text">
+    <div class="hd_img_w_text-img">
+      <img src="{{ section.settings.image | img_url: '800x' }}" alt="{{ section.settings.image.alt | escape }}">
+    </div>
+    <div class="hd_img_w_text-text">
+      <h2 class="bogart">{{ section.settings.heading }}</h2>
+      <p class="bogart">{{ section.settings.description }}</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<style>
+
+  .hd_img_w_text {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+  .hd_img_w_text-text h2 {
+    text-align: {{ section.settings.headingAlignment }};
+    font-size: {{ section.settings.headingFontSize }}px;
+    font-family: 'Bogart', serif;
+  }
+
+  .hd_img_w_text-text p {
+    text-align: {{ section.settings.descriptionAlignment }};
+    font-size: {{ section.settings.descriptionFontSize }}px;
+  }
+
+</style>
+
+
+{% schema %}
+{
+  "name": "HD Image with Text",
+  "class": "hd-img-w-text",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Title"
+    },
+    {
+     "type": "radio",
+      "id": "headingAlignment",
+      "label": "Title Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+     "type": "range",
+      "id": "headingFontSize",
+      "label": "Title Font Size",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "default": 20
+    },
+    {
+     "type": "textarea",
+      "id": "description", 
+      "label": "Description"
+    },
+    {
+     "type": "radio",
+     "id": "descriptionAlignment",
+      "label": "Description Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+     "type": "range",
+      "id": "descriptionFontSize",
+      "label": "Description Font Size",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "default": 20
+    },
+    {
+     "type": "text",
+      "id": "button_text", 
+      "label": "Button Text"  
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    }
+
+  ],
+  "presets": [
+    {
+      "name": "HD Image with Text",
+      "category": "Headless"
+    }
+  ]
+}
+{% endschema %}
