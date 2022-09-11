@@ -6,6 +6,11 @@
     <div class="hd_img_w_text-text">
       <h2 class="bogart">{{ section.settings.heading }}</h2>
       <p class="bogart">{{ section.settings.description }}</p>
+      <div class="btn_container">
+        {% if section.setttings.button_text != empty %}
+          <button><a href="{{ section.settings.product }}">{{ section.settings.button_text }}</a></button>
+        {% endif %}
+      </div>
     </div>
   </div>
 </div>
@@ -15,6 +20,16 @@
 
 
 <style>
+  @font-face {
+    font-family: "Bogart";
+    src: url('https://cdn.shopify.com/s/files/1/0617/6636/9450/files/Bogar.TTF?v=1662812397') format("truetype"),
+  }
+
+
+
+  .bogart {
+    font-family: "Bogart" !important;
+  }
 
   .hd_img_w_text {
     display: flex;
@@ -26,12 +41,34 @@
   .hd_img_w_text-text h2 {
     text-align: {{ section.settings.headingAlignment }};
     font-size: {{ section.settings.headingFontSize }}px;
-    font-family: 'Bogart', serif;
   }
 
   .hd_img_w_text-text p {
     text-align: {{ section.settings.descriptionAlignment }};
     font-size: {{ section.settings.descriptionFontSize }}px;
+  }
+
+  .btn_container {
+    text-align: {{ section.settings.buttonAlignment }};
+  }
+
+  .hd_img_w_text-text button {
+    background-color: {{ section.settings.buttonColor }};
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: {{ section.settings.buttonFontSize }}px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  .hd_img_w_text-text button a {
+    color: {{ section.settings.buttonTextColor }};
+    text-decoration: none;
+
   }
 
 </style>
@@ -122,6 +159,44 @@
       "type": "product",
       "id": "product",
       "label": "Product"
+    },
+    {
+      "type": "color",
+        "id": "buttonColor",
+        "label": "Button Color"
+      },
+      {
+      "type": "color",
+        "id": "buttonTextColor",
+        "label": "Button Text Color"
+      },
+      {
+      "type": "range",
+        "id": "buttonFontSize",
+        "label": "Button Font Size",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "default": 20
+    },
+    {
+     "type": "radio",
+     "id": "buttonAlignment",
+      "label": "Button Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
     }
 
   ],
