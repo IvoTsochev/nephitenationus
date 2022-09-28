@@ -1,0 +1,198 @@
+{% schema %}
+{
+  "name": "Ultimate Rich Text",
+  "tag": "article",
+  "class": "ultimate-rich-text",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background-img",
+      "label": "Background Image"
+    }
+ ],
+ "blocks": [
+    {
+      "type": "image_picker",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+         "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+     "type": "text",
+     "name": "Heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Heading Text"
+        },
+        {
+         "type": "range",
+          "id": "font-size",
+          "label": "Font Size",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "default": 20
+        },
+        {
+         "type": "select",
+         "id": "heading-alignments",
+          "label": "Heading Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        }
+      ]
+    },
+    {
+     "type": "Subheading",
+     "name": "Subheading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Subheading Text"
+        },
+        {
+          "type": "range",
+           "id": "font-size",
+           "label": "Font Size",
+           "min": 10,
+           "max": 100,
+           "step": 1,
+           "default": 20
+         },
+         {
+          "type": "select",
+          "id": "subheading-alignments",
+           "label": "Subheading Alignment",
+           "options": [
+             {
+               "value": "left",
+               "label": "Left"
+             },
+             {
+               "value": "center",
+               "label": "Center"
+             },
+             {
+               "value": "right",
+               "label": "Right"
+             }
+           ]
+         }
+      ]
+    },
+    {
+     "type": "textarea",
+     "name": "Description",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description Text"
+        },
+        {
+          "type": "range",
+           "id": "font-size",
+           "label": "Font Size",
+           "min": 10,
+           "max": 100,
+           "step": 1,
+           "default": 20
+         },
+         {
+          "type": "select",
+          "id": "description-alignments",
+           "label": "Description Alignment",
+           "options": [
+             {
+               "value": "left",
+               "label": "Left"
+             },
+             {
+               "value": "center",
+               "label": "Center"
+             },
+             {
+               "value": "right",
+               "label": "Right"
+             }
+           ]
+         }
+      ]
+    },
+    {
+     "type": "button",
+     "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Button Link"
+        },
+        {
+          "type": "select",
+          "id": "button-alignments",
+           "label": "Button Alignment",
+           "options": [
+             {
+               "value": "left",
+               "label": "Left"
+             },
+             {
+               "value": "center",
+               "label": "Center"
+             },
+             {
+               "value": "right",
+               "label": "Right"
+             }
+           ]
+         }
+      ]
+    }
+
+ ],
+ "presets": [
+    {
+      "name": "Ultimate Rich Text",
+      "blocks": [
+        {
+          "type": "image_picker"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,52 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "16643041649d2783b3": {
+      "type": "rich-text",
+      "blocks": {
+        "16643041646551cd96-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Smart Luxury",
+            "heading_size": "h0"
+          }
+        },
+        "16643041646551cd96-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>VIP PRE-LAUNCH ORDER<\/p><p>INSERT YOUR SPECIAL CODE TO HAVE ACESS TO THE <br\/>T-SHIRT SPECIAL PRICE PRE-ORDER<\/p>"
+          }
+        },
+        "16643041646551cd96-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "CODE HERE",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "16643041646551cd96-0",
+        "16643041646551cd96-1",
+        "16643041646551cd96-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16643041649d2783b3"
+  ]
+}
