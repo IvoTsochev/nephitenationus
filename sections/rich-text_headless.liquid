@@ -1,3 +1,12 @@
+<div>
+  <div>
+    
+    <h1 class="text-red-500">hey hey</h1>
+  </div>
+</div>
+
+
+
 {% schema %}
 {
   "name": "Ultimate Rich Text",
@@ -9,8 +18,8 @@
       "id": "background-img",
       "label": "Background Image"
     }
- ],
- "blocks": [
+  ],
+  "blocks": [
     {
       "type": "image_picker",
       "name": "Image",
@@ -21,15 +30,15 @@
           "label": "Image"
         },
         {
-         "type": "url",
+          "type": "url",
           "id": "link",
           "label": "Link"
         }
       ]
     },
     {
-     "type": "text",
-     "name": "Heading",
+      "type": "text",
+      "name": "Heading",
       "settings": [
         {
           "type": "text",
@@ -37,7 +46,7 @@
           "label": "Heading Text"
         },
         {
-         "type": "range",
+          "type": "range",
           "id": "font-size",
           "label": "Font Size",
           "min": 10,
@@ -46,8 +55,8 @@
           "default": 20
         },
         {
-         "type": "select",
-         "id": "heading-alignments",
+          "type": "select",
+          "id": "heading-alignments",
           "label": "Heading Alignment",
           "options": [
             {
@@ -67,8 +76,8 @@
       ]
     },
     {
-     "type": "Subheading",
-     "name": "Subheading",
+      "type": "Subheading",
+      "name": "Subheading",
       "settings": [
         {
           "type": "text",
@@ -77,37 +86,37 @@
         },
         {
           "type": "range",
-           "id": "font-size",
-           "label": "Font Size",
-           "min": 10,
-           "max": 100,
-           "step": 1,
-           "default": 20
-         },
-         {
+          "id": "font-size",
+          "label": "Font Size",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "default": 20
+        },
+        {
           "type": "select",
           "id": "subheading-alignments",
-           "label": "Subheading Alignment",
-           "options": [
-             {
-               "value": "left",
-               "label": "Left"
-             },
-             {
-               "value": "center",
-               "label": "Center"
-             },
-             {
-               "value": "right",
-               "label": "Right"
-             }
-           ]
-         }
+          "label": "Subheading Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        }
       ]
     },
     {
-     "type": "textarea",
-     "name": "Description",
+      "type": "textarea",
+      "name": "Description",
       "settings": [
         {
           "type": "textarea",
@@ -116,37 +125,37 @@
         },
         {
           "type": "range",
-           "id": "font-size",
-           "label": "Font Size",
-           "min": 10,
-           "max": 100,
-           "step": 1,
-           "default": 20
-         },
-         {
+          "id": "font-size",
+          "label": "Font Size",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "default": 20
+        },
+        {
           "type": "select",
           "id": "description-alignments",
-           "label": "Description Alignment",
-           "options": [
-             {
-               "value": "left",
-               "label": "Left"
-             },
-             {
-               "value": "center",
-               "label": "Center"
-             },
-             {
-               "value": "right",
-               "label": "Right"
-             }
-           ]
-         }
+          "label": "Description Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        }
       ]
     },
     {
-     "type": "button",
-     "name": "Button",
+      "type": "button",
+      "name": "Button",
       "settings": [
         {
           "type": "text",
@@ -161,27 +170,67 @@
         {
           "type": "select",
           "id": "button-alignments",
-           "label": "Button Alignment",
-           "options": [
-             {
-               "value": "left",
-               "label": "Left"
-             },
-             {
-               "value": "center",
-               "label": "Center"
-             },
-             {
-               "value": "right",
-               "label": "Right"
-             }
-           ]
-         }
+          "label": "Button Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "SocialMedia",
+      "name": "Social Media",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "social_text",
+          "label": "Social Media Text"
+        },
+        {
+          "type": "url",
+          "id": "facebook_link",
+          "label": "Facebook Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "facebook_icon",
+          "label": "Facebook Icon"
+        },
+        {
+          "type": "url",
+          "id": "linkedin_link",
+          "label": "LinkedIn Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "linkedin_icon",
+          "label": "LinkedIn Icon"
+        },
+        {
+          "type": "url",
+          "id": "instagram_link",
+          "label": "Instagram Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "instagram_icon",
+          "label": "Instagram Icon"
+        }
       ]
     }
-
- ],
- "presets": [
+  ],
+  "presets": [
     {
       "name": "Ultimate Rich Text",
       "blocks": [
@@ -190,6 +239,18 @@
         },
         {
           "type": "text"
+        },
+        {
+          "type": "Subheading"
+        },
+        {
+          "type": "textarea"
+        },
+        {
+          "type": "button"
+        },
+        {
+          "type": "SocialMedia"
         }
       ]
     }
