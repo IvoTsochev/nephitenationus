@@ -1,7 +1,76 @@
 <div>
-  <div>
-    
-    <h1 class="text-red-500">hey hey</h1>
+  <div class="p-10">
+
+
+    {% for block in section.blocks %}
+
+      {% case block.type %}
+        {% when 'MainLogo' %}
+
+          <div class="
+              flex 
+              {{ block.settings.logo_alignment }}
+            ">
+            <img src={{ block.settings.logo_image | image_url: width: 400 | image_url }}/>
+          </div>
+
+
+
+        {% when 'text' %}
+
+
+          <div class="
+              flex my-5  
+              {{ block.settings.heading_alignments }}
+            ">
+            <h1 class="
+              {{ block.settings.heading_font_size }}
+              ">{{ block.settings.heading_text }}</h1>
+          </div>
+
+        {% when 'Subheading' %}
+          <div class="
+            flex 
+            mb-10
+            {{ block.settings.subheading_alignments }}
+            ">
+            <h2 class="
+              {{ block.settings.subheading_font_size }}
+              ">{{ block.settings.subheading_text }}</h2>
+          </div>
+
+
+        {% when 'textarea' %}
+          <div class="
+            flex
+            mb-10
+            {{ block.settings.description_alignments }}
+            ">
+            <p class="
+              {{ block.settings.description_font_size }}
+              ">{{ block.settings.description_text }}</p>
+          </div>
+
+
+        {% when 'button' %}
+          <div class="
+            flex
+            {{ block.settings.button_alignments }}
+            ">
+            <a href="{{ block.settings.button_link }}" class="p-8 bg-red-300">
+              {{ block.settings.button_text }}
+            </a>
+          </div>
+
+        {% when 'SocialMedia' %}
+          <p>this is the social mediaaaaa</p>
+
+      {%- endcase -%}
+
+
+    {% endfor %}
+
+
   </div>
 </div>
 
@@ -21,18 +90,37 @@
   ],
   "blocks": [
     {
-      "type": "image_picker",
+      "type": "MainLogo",
       "name": "Image",
       "settings": [
         {
           "type": "image_picker",
-          "id": "image",
+          "id": "logo_image",
           "label": "Image"
         },
         {
           "type": "url",
           "id": "link",
           "label": "Link"
+        },
+        {
+          "type": "select",
+          "id": "logo_alignment",
+          "label": "Logo Alignment",
+          "options": [
+            {
+              "value": "justify-start",
+              "label": "Left"
+            },
+            {
+              "value": "justify-center",
+              "label": "Center"
+            },
+            {
+              "value": "justify-end",
+              "label": "Right"
+            }
+          ]
         }
       ]
     },
@@ -42,33 +130,83 @@
       "settings": [
         {
           "type": "text",
-          "id": "text",
+          "id": "heading_text",
           "label": "Heading Text"
         },
         {
-          "type": "range",
-          "id": "font-size",
-          "label": "Font Size",
-          "min": 10,
-          "max": 100,
-          "step": 1,
-          "default": 20
+          "type": "select",
+          "id": "heading_font_size",
+          "label": "Heading Font Size",
+          "options": [
+            {
+              "value": "text-xs",
+              "label": "Extra Small"
+            },
+            {
+              "value": "text-sm",
+              "label": "Small"
+            },
+            {
+              "value": "text-base",
+              "label": "Base"
+            },
+            {
+              "value": "text-lg",
+              "label": "Large"
+            },
+            {
+              "value": "text-xl",
+              "label": "Extra Large"
+            },
+            {
+              "value": "text-2xl",
+              "label": "2 Extra Large"
+            },
+            {
+              "value": "text-3xl",
+              "label": "3 Extra Large"
+            },
+            {
+              "value": "text-4xl",
+              "label": "4 Extra Large"
+            },
+            {
+              "value": "text-5xl",
+              "label": "5 Extra Large"
+            },
+            {
+              "value": "text-6xl",
+              "label": "6 Extra Large"
+            },
+            {
+              "value": "text-7xl",
+              "label": "7 Extra Large"
+            },
+            {
+              "value": "text-8xl",
+              "label": "8 Extra Large"
+            },
+            {
+              "value": "text-9xl",
+              "label": "9 Extra Large"
+            }
+          ]
         },
         {
           "type": "select",
-          "id": "heading-alignments",
+          "id": "heading_alignments",
           "label": "Heading Alignment",
           "options": [
             {
-              "value": "left",
+              "value": "justify-start",
               "label": "Left"
             },
             {
-              "value": "center",
+              "value": "justify-center",
               "label": "Center"
             },
             {
-              "value": "right",
+              "value": "justify-end",
               "label": "Right"
             }
           ]
@@ -81,33 +219,83 @@
       "settings": [
         {
           "type": "text",
-          "id": "text",
+          "id": "subheading_text",
           "label": "Subheading Text"
         },
         {
-          "type": "range",
-          "id": "font-size",
-          "label": "Font Size",
-          "min": 10,
-          "max": 100,
-          "step": 1,
-          "default": 20
+          "type": "select",
+          "id": "subheading_font_size",
+          "label": "Heading Font Size",
+          "options": [
+            {
+              "value": "text-xs",
+              "label": "Extra Small"
+            },
+            {
+              "value": "text-sm",
+              "label": "Small"
+            },
+            {
+              "value": "text-base",
+              "label": "Base"
+            },
+            {
+              "value": "text-lg",
+              "label": "Large"
+            },
+            {
+              "value": "text-xl",
+              "label": "Extra Large"
+            },
+            {
+              "value": "text-2xl",
+              "label": "2 Extra Large"
+            },
+            {
+              "value": "text-3xl",
+              "label": "3 Extra Large"
+            },
+            {
+              "value": "text-4xl",
+              "label": "4 Extra Large"
+            },
+            {
+              "value": "text-5xl",
+              "label": "5 Extra Large"
+            },
+            {
+              "value": "text-6xl",
+              "label": "6 Extra Large"
+            },
+            {
+              "value": "text-7xl",
+              "label": "7 Extra Large"
+            },
+            {
+              "value": "text-8xl",
+              "label": "8 Extra Large"
+            },
+            {
+              "value": "text-9xl",
+              "label": "9 Extra Large"
+            }
+          ]
         },
         {
           "type": "select",
-          "id": "subheading-alignments",
+          "id": "subheading_alignments",
           "label": "Subheading Alignment",
           "options": [
             {
-              "value": "left",
+              "value": "justify-start",
               "label": "Left"
             },
             {
-              "value": "center",
+              "value": "justify-center",
               "label": "Center"
             },
             {
-              "value": "right",
+              "value": "justify-end",
               "label": "Right"
             }
           ]
@@ -120,33 +308,83 @@
       "settings": [
         {
           "type": "textarea",
-          "id": "text",
+          "id": "description_text",
           "label": "Description Text"
         },
         {
-          "type": "range",
-          "id": "font-size",
-          "label": "Font Size",
-          "min": 10,
-          "max": 100,
-          "step": 1,
-          "default": 20
+          "type": "select",
+          "id": "description_font_size",
+          "label": "Heading Font Size",
+          "options": [
+            {
+              "value": "text-xs",
+              "label": "Extra Small"
+            },
+            {
+              "value": "text-sm",
+              "label": "Small"
+            },
+            {
+              "value": "text-base",
+              "label": "Base"
+            },
+            {
+              "value": "text-lg",
+              "label": "Large"
+            },
+            {
+              "value": "text-xl",
+              "label": "Extra Large"
+            },
+            {
+              "value": "text-2xl",
+              "label": "2 Extra Large"
+            },
+            {
+              "value": "text-3xl",
+              "label": "3 Extra Large"
+            },
+            {
+              "value": "text-4xl",
+              "label": "4 Extra Large"
+            },
+            {
+              "value": "text-5xl",
+              "label": "5 Extra Large"
+            },
+            {
+              "value": "text-6xl",
+              "label": "6 Extra Large"
+            },
+            {
+              "value": "text-7xl",
+              "label": "7 Extra Large"
+            },
+            {
+              "value": "text-8xl",
+              "label": "8 Extra Large"
+            },
+            {
+              "value": "text-9xl",
+              "label": "9 Extra Large"
+            }
+          ]
         },
         {
           "type": "select",
-          "id": "description-alignments",
+          "id": "description_alignments",
           "label": "Description Alignment",
           "options": [
             {
-              "value": "left",
+              "value": "justify-start",
               "label": "Left"
             },
             {
-              "value": "center",
+              "value": "justify-center",
               "label": "Center"
             },
             {
-              "value": "right",
+              "value": "justify-end",
               "label": "Right"
             }
           ]
@@ -159,29 +397,29 @@
       "settings": [
         {
           "type": "text",
-          "id": "text",
+          "id": "button_text",
           "label": "Button Text"
         },
         {
           "type": "url",
-          "id": "link",
+          "id": "button_link",
           "label": "Button Link"
         },
         {
           "type": "select",
-          "id": "button-alignments",
+          "id": "button_alignments",
           "label": "Button Alignment",
           "options": [
             {
-              "value": "left",
+              "value": "justify-start",
               "label": "Left"
             },
             {
-              "value": "center",
+              "value": "justify-center",
               "label": "Center"
             },
             {
-              "value": "right",
+              "value": "justify-end",
               "label": "Right"
             }
           ]
@@ -235,7 +473,7 @@
       "name": "Ultimate Rich Text",
       "blocks": [
         {
-          "type": "image_picker"
+          "type": "MainLogo"
         },
         {
           "type": "text"
