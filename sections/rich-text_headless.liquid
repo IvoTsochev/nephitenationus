@@ -1,5 +1,5 @@
 <div>
-  <div class="p-20 h-screen flex flex-col justify-center bg-[url('{{ section.settings.background_img | image_url: width: 300 }}')] bg-repeat">
+  <div class="p-20 h-screen flex flex-col justify-center bg-[url('{{ section.settings.background_img | image_url: width: 800 }}')] bg-repeat">
 
     <div class="">
     {% for block in section.blocks %}
@@ -65,7 +65,30 @@
           </div>
 
         {% when 'SocialMedia' %}
-          <p>this is the social mediaaaaa</p>
+          <div>
+            <p>{{ block.settings.social_text }}</p>
+            <ul class="flex">
+
+              <li>
+                <a href="{{ block.settings.facebook_link }}">
+                  <img src={{ block.settings.facebook_icon | image_url: width: 600 }} alt="">
+                </a>
+              </li>
+
+              <li>
+                <a href="{{ block.settings.linkedin_link }}">
+                  <img src={{ block.settings.linkedin_icon | image_url: width: 800 }} alt="">
+                </a>
+              </li>
+
+              <li>
+                <a href="{{ block.settings.instagram_link }}">
+                  <img src={{ block.settings.instagram_icon | image_url: width: 800 }} alt="">
+                </a>
+              </li>
+
+            </ul>
+          </div>
 
       {%- endcase -%}
 
