@@ -2,51 +2,215 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
     },
-    "16643041649d2783b3": {
-      "type": "rich-text",
+    "1664881572b9f0110d": {
+      "type": "rich-text_headless",
       "blocks": {
-        "16643041646551cd96-0": {
-          "type": "heading",
+        "1664881572f6b7afce-0": {
+          "type": "MainLogo",
           "settings": {
-            "heading": "Smart Luxury",
-            "heading_size": "h0"
+            "logo_image": "shopify:\/\/shop_images\/Screenshot_2022-10-01_at_10.56.46.png",
+            "link": "",
+            "logo_alignment": "justify-center"
           }
         },
-        "16643041646551cd96-1": {
+        "1664881572f6b7afce-1": {
           "type": "text",
           "settings": {
-            "text": "<p>VIP PRE-LAUNCH ORDER<\/p><p>INSERT YOUR SPECIAL CODE TO HAVE ACESS TO THE <br\/>T-SHIRT SPECIAL PRICE PRE-ORDER<\/p>"
+            "heading_text": "Smart Luxury",
+            "heading_font_size": "text-9xl",
+            "heading_alignments": "justify-center"
           }
         },
-        "16643041646551cd96-2": {
+        "1664881572f6b7afce-2": {
+          "type": "Subheading",
+          "settings": {
+            "subheading_text": "VIP PRE-LAUNCH ORDER",
+            "subheading_font_size": "text-6xl",
+            "subheading_alignments": "justify-center"
+          }
+        },
+        "1664881572f6b7afce-3": {
+          "type": "textarea",
+          "settings": {
+            "description_text": "INSERT YOUR SPECIAL CODE TO HAVE ACESS TO THE \nT-SHIRT SPECIAL PRICE PRE-ORDER",
+            "description_font_size": "text-6xl",
+            "description_width": 70,
+            "text_alignments": "text-center",
+            "description_position": "m-auto"
+          }
+        },
+        "1664881572f6b7afce-4": {
           "type": "button",
           "settings": {
-            "button_label": "CODE HERE",
-            "button_link": "",
-            "button_style_secondary": false
+            "button_text": "CODE HERE",
+            "button_link": "shopify:\/\/collections\/bandanas",
+            "button_alignments": "justify-center",
+            "button_bg_color": "#d9d9d9"
           }
         }
       },
       "block_order": [
-        "16643041646551cd96-0",
-        "16643041646551cd96-1",
-        "16643041646551cd96-2"
+        "1664881572f6b7afce-0",
+        "1664881572f6b7afce-1",
+        "1664881572f6b7afce-2",
+        "1664881572f6b7afce-3",
+        "1664881572f6b7afce-4"
       ],
       "settings": {
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "background_img": "shopify:\/\/shop_images\/SCR-20221005-dw7.png"
+      }
+    },
+    "1664881724b3ff2dc3": {
+      "type": "rich-text_headless",
+      "blocks": {
+        "16648817246ca33f83-1": {
+          "type": "text",
+          "settings": {
+            "heading_text": "TO GET A CODE:",
+            "heading_font_size": "text-6xl",
+            "heading_alignments": "justify-start"
+          }
+        },
+        "16648817246ca33f83-2": {
+          "type": "Subheading",
+          "settings": {
+            "subheading_text": "PLEASE FOLLOW NEXT STEPS",
+            "subheading_font_size": "text-4xl",
+            "subheading_alignments": "justify-start"
+          }
+        },
+        "16648817246ca33f83-3": {
+          "type": "textarea",
+          "settings": {
+            "description_text": "Follow our instagram page to find the updates \n@nephite.nation\n\nOR \n\nSendus email with pre-order details\npreorder@nepnitenation.com \n\nOR \nFind NEPHITE NATION ambassador in social media who is sharing their code",
+            "description_font_size": "text-4xl",
+            "description_width": 70,
+            "text_alignments": "text-left",
+            "description_position": "ml-0 mr-auto"
+          }
+        },
+        "16648817246ca33f83-5": {
+          "type": "SocialMedia",
+          "settings": {
+            "social_text": "connect with Me",
+            "facebook_link": "",
+            "facebook_icon": "shopify:\/\/shop_images\/SCR-20221004-jpz.png",
+            "linkedin_link": "",
+            "linkedin_icon": "shopify:\/\/shop_images\/SCR-20221004-jou.png",
+            "instagram_link": "",
+            "instagram_icon": "shopify:\/\/shop_images\/SCR-20221004-jq4.png"
+          }
+        }
+      },
+      "block_order": [
+        "16648817246ca33f83-1",
+        "16648817246ca33f83-2",
+        "16648817246ca33f83-3",
+        "16648817246ca33f83-5"
+      ],
+      "settings": {
+      }
+    },
+    "1664882418580c4ff1": {
+      "type": "rich-text_headless",
+      "blocks": {
+        "16648824183c667ea1-1": {
+          "type": "text",
+          "settings": {
+            "heading_text": "TERMS AND CONDITIONS:",
+            "heading_font_size": "text-6xl",
+            "heading_alignments": "justify-start"
+          }
+        },
+        "16648824183c667ea1-3": {
+          "type": "textarea",
+          "settings": {
+            "description_text": "Every code has a limit from 1 to 7 days\nNo returns available with special pre-order \nProposal is limited, availbe before official launch\nAll the orders wil be shipped by the end of October \nWith this purchase you will get the same acess to VIP Shopping club as with other purchases",
+            "description_font_size": "text-4xl",
+            "description_width": 70,
+            "text_alignments": "text-left",
+            "description_position": "ml-0 mr-auto"
+          }
+        },
+        "6659b0f6-f149-4f74-a233-518bb0ad781b": {
+          "type": "textarea",
+          "settings": {
+            "description_text": "SHOP AVAILABLE OPTIONS",
+            "description_font_size": "text-2xl",
+            "description_width": 100,
+            "text_alignments": "text-left",
+            "description_position": "ml-auto mr-0"
+          }
+        }
+      },
+      "block_order": [
+        "16648824183c667ea1-1",
+        "16648824183c667ea1-3",
+        "6659b0f6-f149-4f74-a233-518bb0ad781b"
+      ],
+      "settings": {
+      }
+    },
+    "1664882514335a8953": {
+      "type": "rich-text_headless",
+      "blocks": {
+        "1664882513160cf9e1-1": {
+          "type": "text",
+          "settings": {
+            "heading_text": "IF YOU ARE A RE-SELLER:",
+            "heading_font_size": "text-6xl",
+            "heading_alignments": "justify-start"
+          }
+        },
+        "1664882513160cf9e1-2": {
+          "type": "Subheading",
+          "settings": {
+            "subheading_text": "PLEASE FILL THE FORM",
+            "subheading_font_size": "text-4xl",
+            "subheading_alignments": "justify-start"
+          }
+        },
+        "1664882513160cf9e1-3": {
+          "type": "textarea",
+          "settings": {
+            "description_text": "SHOP AVAILABLE OPTIONS",
+            "description_font_size": "text-3xl",
+            "description_width": 100,
+            "text_alignments": "text-right",
+            "description_position": "ml-auto mr-0"
+          }
+        },
+        "1664882513160cf9e1-5": {
+          "type": "SocialMedia",
+          "settings": {
+            "social_text": "",
+            "facebook_link": "",
+            "linkedin_link": "",
+            "instagram_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1664882513160cf9e1-1",
+        "1664882513160cf9e1-2",
+        "1664882513160cf9e1-3",
+        "1664882513160cf9e1-5"
+      ],
+      "settings": {
       }
     }
   },
   "order": [
     "main",
-    "16643041649d2783b3"
+    "1664881572b9f0110d",
+    "1664881724b3ff2dc3",
+    "1664882418580c4ff1",
+    "1664882514335a8953"
   ]
 }

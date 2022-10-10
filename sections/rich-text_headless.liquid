@@ -1,7 +1,7 @@
 <div>
-  <div class="p-10">
+  <div class="p-20 h-screen flex flex-col justify-center bg-[url(`{{ section.settings.background_img | image_url: width: 300 }}`)] bg-repeat">
 
-
+    <div class="">
     {% for block in section.blocks %}
 
       {% case block.type %}
@@ -44,7 +44,9 @@
           <div class="
             flex
             mb-10
-            {{ block.settings.description_alignments }}
+            w-[{{ block.settings.description_width }}%]
+            {{ block.settings.text_alignments }}
+            {{ block.settings.description_position }}
             ">
             <p class="
               {{ block.settings.description_font_size }}
@@ -57,7 +59,7 @@
             flex
             {{ block.settings.button_alignments }}
             ">
-            <a href="{{ block.settings.button_link }}" class="p-8 bg-red-300">
+            <a href="{{ block.settings.button_link }}" class="p-8 bg-[{{ block.settings.button_bg_color }}]">
               {{ block.settings.button_text }}
             </a>
           </div>
@@ -69,6 +71,7 @@
 
 
     {% endfor %}
+    </div>
 
 
   </div>
@@ -84,7 +87,7 @@
   "settings": [
     {
       "type": "image_picker",
-      "id": "background-img",
+      "id": "background_img",
       "label": "Background Image"
     }
   ],
@@ -371,20 +374,48 @@
           ]
         },
         {
+          "type": "range",
+          "id": "description_width",
+          "label": "Description Width",
+          "min": 50,
+          "max": 100,
+          "step": 1,
+          "default": 100
+        },
+        {
           "type": "select",
-          "id": "description_alignments",
-          "label": "Description Alignment",
+          "id": "text_alignments",
+          "label": "Text Alignment",
           "options": [
             {
-              "value": "justify-start",
+              "value": "text-left",
               "label": "Left"
             },
             {
-              "value": "justify-center",
+              "value": "text-center",
               "label": "Center"
             },
             {
-              "value": "justify-end",
+              "value": "text-right",
+              "label": "Right"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "description_position",
+          "label": "Description Position",
+          "options": [
+            {
+              "value": "ml-0 mr-auto",
+              "label": "Left"
+            },
+            {
+              "value": "m-auto",
+              "label": "Center"
+            },
+            {
+              "value": "ml-auto mr-0",
               "label": "Right"
             }
           ]
@@ -423,6 +454,11 @@
               "label": "Right"
             }
           ]
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button Color"
         }
       ]
     },
